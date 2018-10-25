@@ -62,6 +62,11 @@ class CameraController: UIViewController {
     }
     
     @IBAction func rotationCamera(_ sender: Any) {
+        switch position {
+        case .back: position = .front
+        default: position = .back
+        }
+        setupCamera()
     }
 }
 
