@@ -31,6 +31,11 @@ class CameraController: UIViewController {
         imagePicker.sourceType = .photoLibrary
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        montrerImage()
+    }
+    
     func setupCamera() {
         previewLayer?.removeFromSuperlayer()
         
@@ -81,6 +86,10 @@ class CameraController: UIViewController {
     }
 
     @IBAction func prendrePhoto(_ sender: Any) {
+        guard capturePhotoOutput != nil else { return }
+        let photoSettings = AVCapturePhotoSettings()
+        photoSettings.previewPhotoFormat = photoSettings.embeddedThumbnailPhotoFormat
+        capturePhotoOutput?.capturePhoto(with: photoSettings, delegate: self)
     }
     
     @IBAction func versLibrarie(_ sender: Any) {
@@ -101,12 +110,27 @@ extension CameraController: UIImagePickerControllerDelegate, UINavigationControl
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
             imageChoisie = image
-            montrerImage()
         }
         dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+extension CameraController: AVCapturePhotoCaptureDelegate {
+    
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        if let erreur = error {
+            print("Erreur: \(erreur.localizedDescription)")
+        } else {
+            if let data = photo.fileDataRepresentation() {
+                self.imageChoisie = UIImage(data: data)
+                self.montrerImage()
+            } else {
+                print("Erreur: le résultat ne m'a pas donné de data")
+            }
+        }
     }
 }
