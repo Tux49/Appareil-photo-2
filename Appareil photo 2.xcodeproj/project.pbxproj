@@ -13,6 +13,7 @@
 		2C2BF4E52181F9BE007864B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C2BF4E42181F9BE007864B9 /* Assets.xcassets */; };
 		2C2BF4E82181F9BE007864B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C2BF4E62181F9BE007864B9 /* LaunchScreen.storyboard */; };
 		2C2BF4F0218219B9007864B9 /* BoutonArrondi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BF4EF218219B9007864B9 /* BoutonArrondi.swift */; };
+		2C2BF4F22182257C007864B9 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2BF4F12182257C007864B9 /* CustomImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		2C2BF4E72181F9BE007864B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C2BF4E92181F9BE007864B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C2BF4EF218219B9007864B9 /* BoutonArrondi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoutonArrondi.swift; sourceTree = "<group>"; };
+		2C2BF4F12182257C007864B9 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				2C2BF4E62181F9BE007864B9 /* LaunchScreen.storyboard */,
 				2C2BF4E92181F9BE007864B9 /* Info.plist */,
 				2C2BF4EF218219B9007864B9 /* BoutonArrondi.swift */,
+				2C2BF4F12182257C007864B9 /* CustomImageView.swift */,
 			);
 			path = "Appareil photo 2";
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C2BF4E02181F9BD007864B9 /* CameraController.swift in Sources */,
+				2C2BF4F22182257C007864B9 /* CustomImageView.swift in Sources */,
 				2C2BF4DE2181F9BD007864B9 /* AppDelegate.swift in Sources */,
 				2C2BF4F0218219B9007864B9 /* BoutonArrondi.swift in Sources */,
 			);
